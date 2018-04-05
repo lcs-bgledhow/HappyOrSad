@@ -15,3 +15,41 @@ var rawInput = readLine()
 print("You said:")
 print(rawInput)
 
+// Make sure the input is not nill
+//(unwrap the optional)
+guard let input = rawInput else{
+    //if we got here, imput is nil, so quit program
+    exit(9) // exit with exit error 9
+}
+
+//print verified input
+print(input)
+
+// loop overeach cahracter of the imput string
+var happyCount = 0
+var sadCount = 0
+for individualCharacter in input {
+    
+    //DEBUG:What character are we looking at now?
+    print(individualCharacter)
+    
+    // Is the character happy, sad, or niether?
+    if individualCharacter == "😃" || "😄" || "😁" || "😆" || "😀" || "☺️" || "😊" || "🙂" || "😌" || "😍" || "😋" || "😜" || "😝" || "🤑" || "🤗"{
+        happyCount+=1
+    } else if individualCharacter == "☹️" || "😞" || "😔" || "😟" || "😕" || "🙁" || "😣" || "😫" || "😩" || "😢" || "😥" || "😭" || "😓" || "😿"{
+        sadCount+=1
+    }
+}
+
+
+//OUTPUT
+if sadCount > happyCount {
+    print("The mood is sad")
+}else if happyCount > sadCount {
+    print("The mood is happy")
+}else if happyCount == sadCount {
+    print("The mood is unsure")
+}else if happyCount == 0 && sadCount == 0 {
+    print("The mood is none")
+}
+

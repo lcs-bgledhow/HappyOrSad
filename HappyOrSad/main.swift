@@ -12,8 +12,9 @@ import Foundation
 var rawInput = readLine()
 
 // Print out the input provided
-print("You said:")
-print(rawInput)
+
+//print("You said:")
+//print(rawInput)
 
 // Make sure the input is not nill
 //(unwrap the optional)
@@ -23,7 +24,7 @@ guard let input = rawInput else{
 }
 
 //print verified input
-print(input)
+//print(input)
 
 // loop overeach cahracter of the imput string
 var happyCount = 0
@@ -31,12 +32,12 @@ var sadCount = 0
 for individualCharacter in input {
     
     //DEBUG:What character are we looking at now?
-    print(individualCharacter)
+//    print(individualCharacter)
     
     // Is the character happy, sad, or niether?
-    if individualCharacter == "😃" || "😄" || "😁" || "😆" || "😀" || "☺️" || "😊" || "🙂" || "😌" || "😍" || "😋" || "😜" || "😝" || "🤑" || "🤗"{
+    if individualCharacter == "😃" || individualCharacter == "😄" ||  individualCharacter == "😆" || individualCharacter == "😀" || individualCharacter == "☺️" || individualCharacter == "😊" || individualCharacter == "🙂" || individualCharacter == "😌" || individualCharacter == "😍" ||  individualCharacter == "😋" || individualCharacter == "😜" || individualCharacter == "😝" || individualCharacter == "🤑" ||   individualCharacter == "🤗" {
         happyCount+=1
-    } else if individualCharacter == "☹️" || "😞" || "😔" || "😟" || "😕" || "🙁" || "😣" || "😫" || "😩" || "😢" || "😥" || "😭" || "😓" || "😿"{
+    } else if individualCharacter == "☹️" || individualCharacter == "😞" || individualCharacter == "😔" || individualCharacter == "😟" || individualCharacter == "😕" || individualCharacter == "🙁" || individualCharacter == "😣" || individualCharacter == "😫" ||  individualCharacter == "😩" || individualCharacter == "😢" || individualCharacter == "😥" || individualCharacter == "😭" || individualCharacter == "😓" || individualCharacter == "😿" {
         sadCount+=1
     }
 }
@@ -44,12 +45,12 @@ for individualCharacter in input {
 
 //OUTPUT
 if sadCount > happyCount {
-    print("The mood is sad")
+    print("sad")
 }else if happyCount > sadCount {
-    print("The mood is happy")
+    print("happy")
 }else if happyCount == sadCount {
-    print("The mood is unsure")
+    print("unsure")
 }else if happyCount == 0 && sadCount == 0 {
-    print("The mood is none")
+    print("none")
 }
 
